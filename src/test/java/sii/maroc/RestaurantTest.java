@@ -30,9 +30,14 @@ public class RestaurantTest {
      * write a test to ensure that when a recipe require out of stocks ingredients we receive an UnavailableDishException (unchecked)
      */
 // Allowed modification zone starts here
-    @Test
-    public void shouldFailWhenOutOfStock(){
+    @Test(expected=DishException.class)
+    public void shouldFailWhenOutOfStock() throws DishException {
+    	Restaurant res = new Restaurant("6 balls Mozzarella", "20 tomatoes", "olive oil", "pepper");
+        res.OutofStock("8 Tomato Mozzarella Salad");
+			
+        
         Assert.fail();
+		
     }
 // Allowed modification zone ends here
 
